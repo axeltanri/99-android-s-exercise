@@ -3,7 +3,7 @@
 This is a fun exercise/challenge to help us assess the skill of candidates interested in joining the engineering team at 99.co. If you would like to attempt it, create your own fork and starting coding away!
 ​
 ## NOTE
-This project is made and built in APK with minimum SDK set to 37. If you have lower version device/virtual device, please adjust the settings in build.grdale.kts (Module:App)
+This project is made and built in APK with minimum SDK set to 37. If you have lower version device/virtual device, please adjust the settings in build.gradle.kts (Module:App)
 There are also additional dependencies such as:
 1. Retrofit2
 2. Glide
