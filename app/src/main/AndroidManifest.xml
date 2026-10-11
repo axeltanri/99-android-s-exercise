@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Team99androidexercise">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -21,9 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity
             android:name=".SearchResult.SearchResultActivity"
             android:exported="false"/>
+        <activity
+            android:name=".ListingDetail.ListingDetailActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

@@ -10,11 +10,12 @@ import com.bumptech.glide.Glide
 import com.example.team99_android_exercise.Model.ListProperty
 import com.example.team99_android_exercise.R
 
-class SearchResultAdapter: RecyclerView.Adapter<SearchResultAdapter.ViewHolder>() {
-    private var items: List<ListProperty> = emptyList()
-
+class SearchResultAdapter (
+    private val onItemClick: (ListProperty) -> Unit
+): RecyclerView.Adapter<SearchResultAdapter.ViewHolder>() {
+    private var _items: List<ListProperty> = emptyList()
     fun setData(newItems: List<ListProperty>){
-        items = newItems
+        _items = newItems
         notifyDataSetChanged()
     }
 
@@ -31,7 +32,7 @@ class SearchResultAdapter: RecyclerView.Adapter<SearchResultAdapter.ViewHolder>(
         holder: ViewHolder,
         position: Int
     ) {
-        val property = items[position]
+        val property = _items[position]
         holder.tvProjectName.text = property.projectName
         holder.tvStreetName.text = "${property.address.streetName} · ${property.address.district}"
         holder.tvCategory.text = "${property.category} · ${property.completedAt} · ${property.tenure} yrs"
@@ -43,9 +44,13 @@ class SearchResultAdapter: RecyclerView.Adapter<SearchResultAdapter.ViewHolder>(
             .placeholder(R.drawable.ic_launcher_background)
             .error(R.drawable.ic_launcher_background)
             .into(holder.ivImage)
+
+        holder.itemView.setOnClickListener {
+            onItemClick(property)
+        }
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount(): Int = _items.size
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val tvProjectName: TextView = view.findViewById(R.id.tvProjectName)

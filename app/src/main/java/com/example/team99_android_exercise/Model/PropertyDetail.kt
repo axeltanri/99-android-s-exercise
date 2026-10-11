@@ -9,7 +9,10 @@ data class PropertyDetail(
     val id: Int,
     val photo: String,
     @SerializedName("project_name")
-    val projectName: String
+    val projectName: String,
+
+    @SerializedName("property_details")
+    val propertyDetails: List<PropertyDetailItem>? = emptyList()
 )
 
 data class DetailAddress(
@@ -25,6 +28,13 @@ data class MapCoordinates(
 )
 
 data class PropertyDetailItem(
+    @SerializedName("label")
     val label: String,
+    @SerializedName("text")
     val text: String,
+)
+
+data class PropertyDetailAttribute(
+    @SerializedName("propertyAttribute")
+    val propertyAttribute: List<PropertyDetailItem>
 )
