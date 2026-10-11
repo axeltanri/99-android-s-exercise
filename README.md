@@ -2,6 +2,13 @@
 ​
 This is a fun exercise/challenge to help us assess the skill of candidates interested in joining the engineering team at 99.co. If you would like to attempt it, create your own fork and starting coding away!
 ​
+## NOTE
+This project is made and built in APK with minimum SDK set to 37. If you have lower version device/virtual device, please adjust the settings in build.grdale.kts (Module:App)
+There are also additional dependencies such as:
+1. Retrofit2
+2. Glide
+3. Gson
+Make sure to sync this dependencies before running the code :) 
 
 ## Introduction
 You are going to complete 2 pages from scratch.
